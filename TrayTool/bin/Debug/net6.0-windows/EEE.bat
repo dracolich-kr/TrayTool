@@ -1,3 +1,0 @@
-REM Hello World
-
-PAUSE
