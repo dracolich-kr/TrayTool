@@ -1,0 +1,25 @@
+Nodes:
+    - Name: AllUpdate
+      IconFileName:
+      ExecuteFileName:
+      ChiledNodes:
+    - Name: ClientUpdate
+      IconFileName:
+      ExecuteFileName:
+      ChiledNodes:
+    - Name: ServerUpdate
+      IconFileName:
+      ExecuteFileName:
+      ChiledNodes:
+    - Name: TableUpdate
+      IconFileName:
+      ExecuteFileName:
+      ChiledNodes:
+    - Name: Kube
+      IconFileName:
+      ExecuteFileName:
+      ChiledNodes:
+        - Name: Kube
+          IconFileName:
+          ExecuteFileName:
+          ChiledNodes:

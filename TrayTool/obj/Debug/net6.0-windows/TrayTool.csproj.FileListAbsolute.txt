@@ -1,0 +1,17 @@
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.csproj.AssemblyReference.cache
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.AssemblyInfoInputs.cache
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.AssemblyInfo.cs
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.csproj.CoreCompileInputs.cache
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\TrayTool.exe
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\TrayTool.deps.json
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\TrayTool.runtimeconfig.json
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\TrayTool.dll
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\TrayTool.pdb
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.dll
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\refint\TrayTool.dll
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.pdb
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.genruntimeconfig.cache
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\ref\TrayTool.dll
+C:\Project\TrayTool\TrayTool\bin\Debug\net6.0-windows\YamlDotNet.dll
+C:\Project\TrayTool\TrayTool\obj\Debug\net6.0-windows\TrayTool.csproj.CopyComplete
