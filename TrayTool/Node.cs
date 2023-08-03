@@ -12,9 +12,9 @@ namespace TrayTool
         public String ExecuteFileName { get; init; }
         public String IconFileName { get; init; }
 
-        public List<Node> ChiledNode { get; init; } = new List<Node>();
+        public List<Node> ChiledNode { get; set; } = new List<Node>();
 
-        Node(String node_name, String file_name, String icon_file_name)
+        public Node(String node_name, String file_name, String icon_file_name)
         {
             NodeName = node_name;
             ExecuteFileName = file_name;

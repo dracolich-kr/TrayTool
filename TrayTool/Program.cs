@@ -1,3 +1,4 @@
+
 namespace TrayTool
 {
     internal static class Program
