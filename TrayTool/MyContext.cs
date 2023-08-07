@@ -124,8 +124,6 @@ namespace TrayTool
 
         public void FileExecute(object? sender, EventArgs e)
         {
-            mControl.ContextMenuStrip.Hide();
-
             MyMenuItem? item = sender as MyMenuItem;
             if (item == null)
                 return;

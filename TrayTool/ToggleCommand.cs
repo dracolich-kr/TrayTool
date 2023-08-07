@@ -19,7 +19,7 @@ namespace TrayTool
 
         public override void Execute()
         {
-            mControl.ContextMenuStrip.Show(mControl, Cursor.Position);
+            mControl.ContextMenuStrip.Show(Cursor.Position);
         }
     }
 }
