@@ -124,6 +124,8 @@ namespace TrayTool
 
         public void FileExecute(object? sender, EventArgs e)
         {
+            mControl.ContextMenuStrip.Hide();
+
             MyMenuItem? item = sender as MyMenuItem;
             if (item == null)
                 return;
@@ -131,10 +133,11 @@ namespace TrayTool
             if (item.FIleName == String.Empty)
                 return;
 
-            if (false == File.Exists(item.FIleName))
+            if (false == File.Exists(item.FIleName) && false == Directory.Exists(item.FIleName))
                 return;
 
-            var process = Process.Start(item.FIleName);
+            var info = new ProcessStartInfo { FileName = item.FIleName, UseShellExecute = true };
+            var process = Process.Start(info);
         }
 
     }

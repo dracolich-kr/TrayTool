@@ -1,7 +1,7 @@
 Nodes:
     - Name: "AllUpdate"
       IconFileName:
-      ExecuteFileName:
+      ExecuteFileName: "C:\\Project\\TrayTool\\TrayTool\\bin"
     - Name: "ClientUpdate"
       IconFileName:
       ExecuteFileName:
