@@ -35,6 +35,7 @@ namespace TrayTool
         public void Dispose()
         {
             DestroyHandle();
+
         }
 
         public void Add(Command scmd)

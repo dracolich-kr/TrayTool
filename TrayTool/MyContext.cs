@@ -15,26 +15,21 @@ namespace TrayTool
         {
             Load();
 
-            // Initialize Tray Icon
             mTrayIcon.ContextMenuStrip = new ContextMenuStrip();
             mTrayIcon.Icon = new Icon("default.ico");
             mTrayIcon.Visible = true;
 
-
-
             foreach(var node in mNodes)
             {
-                var temp = Create(node);
-                mTrayIcon.ContextMenuStrip.Items.Add(temp);
+                mTrayIcon.ContextMenuStrip.Items.Add(Create(node));
             }
 
             mTrayIcon.ContextMenuStrip.Items.Add(new ToolStripMenuItem("Exit", null, Exit));
-
+            
             mControl.ContextMenuStrip = mTrayIcon.ContextMenuStrip;
             mControl.CreateControl();
 
             mKeyboardHandler.Add(new ToggleCommand(mControl));
-
         }
 
         public void Load()
@@ -53,8 +48,7 @@ namespace TrayTool
             {
                 foreach (var node in root.Children)
                 {
-                    Node temp = LoadChild(node);
-                    mNodes.Add(temp);
+                    mNodes.Add(LoadChild(node));
                 }
             }
         }
@@ -62,7 +56,10 @@ namespace TrayTool
         private Node LoadChild(YamlNode param)
         {
             String node_name = param[new YamlScalarNode("Name")].ToString();
+
             String exec_file_name = String.Empty;
+            String icon_file_name = String.Empty;
+
             try
             {
                 exec_file_name = param[new YamlScalarNode("ExecuteFileName")].ToString();
@@ -71,7 +68,13 @@ namespace TrayTool
             {
             }
 
-            String icon_file_name = param[new YamlScalarNode("IconFileName")].ToString();
+            try
+            {
+                icon_file_name = param[new YamlScalarNode("IconFileName")].ToString();
+            }
+            catch (Exception) 
+            { }
+
             Node temp = new Node(node_name, exec_file_name, icon_file_name);
 
             try
@@ -116,9 +119,7 @@ namespace TrayTool
 
         public void Exit(object? sender, EventArgs e)
         {
-            // Hide tray icon, otherwise it will remain shown until user mouses over it
             mTrayIcon.Visible = false;
-
             Application.Exit();
         }
 
@@ -135,7 +136,7 @@ namespace TrayTool
                 return;
 
             var info = new ProcessStartInfo { FileName = item.FIleName, UseShellExecute = true };
-            var process = Process.Start(info);
+            Process.Start(info);
         }
 
     }
