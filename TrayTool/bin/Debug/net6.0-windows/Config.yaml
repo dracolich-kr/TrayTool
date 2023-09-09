@@ -16,9 +16,7 @@ Nodes:
       ChiledNodes:
         - Name: "ConnectDev"
           IconFileName:
-          ExecuteFileName:
-          ChiledNodes:
+          ExecuteFileName: "http://naver.com"
         - Name: "ConnectAlpha"
           IconFileName:
           ExecuteFileName:
-          ChiledNodes:

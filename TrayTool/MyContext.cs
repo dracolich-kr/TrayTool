@@ -19,13 +19,13 @@ namespace TrayTool
             mTrayIcon.Icon = new Icon("default.ico");
             mTrayIcon.Visible = true;
 
-            foreach(var node in mNodes)
+            foreach (var node in mNodes)
             {
                 mTrayIcon.ContextMenuStrip.Items.Add(Create(node));
             }
 
             mTrayIcon.ContextMenuStrip.Items.Add(new ToolStripMenuItem("Exit", null, Exit));
-            
+
             mControl.ContextMenuStrip = mTrayIcon.ContextMenuStrip;
             mControl.CreateControl();
 
@@ -72,7 +72,7 @@ namespace TrayTool
             {
                 icon_file_name = param[new YamlScalarNode("IconFileName")].ToString();
             }
-            catch (Exception) 
+            catch (Exception)
             { }
 
             Node temp = new Node(node_name, exec_file_name, icon_file_name);
@@ -82,7 +82,7 @@ namespace TrayTool
                 var child_node = param[new YamlScalarNode("ChiledNodes")] as YamlSequenceNode;
                 if (child_node == null)
                     return temp;
-                
+
                 var ddd = child_node as YamlSequenceNode;
                 foreach (var node in ddd.Children)
                 {
@@ -109,7 +109,7 @@ namespace TrayTool
             MyMenuItem menu = new MyMenuItem(node.NodeName, image, FileExecute);
             menu.FIleName = node.ExecuteFileName;
 
-            foreach(var chiled in node.ChiledNode)
+            foreach (var chiled in node.ChiledNode)
             {
                 menu.DropDownItems.Add(Create(chiled));
             }
@@ -132,12 +132,29 @@ namespace TrayTool
             if (item.FIleName == String.Empty)
                 return;
 
-            if (false == File.Exists(item.FIleName) && false == Directory.Exists(item.FIleName))
+            if (false == CheckFileName(item.FIleName))
                 return;
 
             var info = new ProcessStartInfo { FileName = item.FIleName, UseShellExecute = true };
             Process.Start(info);
         }
 
+        private bool CheckFileName(String file_name)
+        {
+            if (File.Exists(file_name) == true)
+                return true;
+            else if (Directory.Exists(file_name) == true)
+                return true;
+
+            try
+            {
+                var host_info = System.Net.Dns.GetHostEntry(file_name);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
