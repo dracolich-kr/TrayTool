@@ -1,0 +1,22 @@
+Nodes:
+    - Name: "AllUpdate"
+      IconFileName:
+      ExecuteFileName: "C:\\Project\\TrayTool\\TrayTool\\bin"
+    - Name: "ClientUpdate"
+      IconFileName:
+      ExecuteFileName:
+    - Name: "ServerUpdate"
+      IconFileName:
+      ExecuteFileName:
+    - Name: "TableUpdate"
+      IconFileName:
+      ExecuteFileName:
+    - Name: "Kube"
+      IconFileName:
+      ChiledNodes:
+        - Name: "ConnectDev"
+          IconFileName:
+          ExecuteFileName: "http://naver.com"
+        - Name: "ConnectAlpha"
+          IconFileName:
+          ExecuteFileName:

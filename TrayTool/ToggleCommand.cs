@@ -17,10 +17,14 @@ namespace TrayTool
         {
             mControl = icon;
         }
-
+        
         public override void Execute()
         {
-            mControl.ContextMenuStrip.Show(Cursor.Position);
+            mControl.ContextMenuStrip?.Show(Cursor.Position);
+
+            Application.DoEvents();
+            if(mControl.ContextMenuStrip?.Visible == false)
+                mControl.ContextMenuStrip?.Show(Cursor.Position);
         }
     }
 }
